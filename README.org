@@ -25,3 +25,19 @@ Requires [[https://github.com/sbcl/sbcl][SBCL]] and [[https://www.quicklisp.org/
 
   # then connect with sly on port 4005
 #+end_src
+
+* Installing on Windows
+
+Do everything in your Developer(!) PowerShell.
+For that you have to install Visual Studio with C++ Desktop Development
+
+Make sure vcpkg is pointing to correct vcpkg installation in CMakeUserPresets.json
+
+#+begin_src powershell
+(Get-Item (Get-Command vcpkg).Path).DirectoryName
+#+end_src
+
+#+begin_src powershell
+cmake --preset=default
+cmake --build build
+#+end_src
